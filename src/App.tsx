@@ -7,7 +7,7 @@ import MovesPage from "./pages/MovesPage";
 
 function App() {
   const moveData = useMemo(() => {
-    return generateMoveDB().concat(generateMoveDB()).concat(generateMoveDB()).concat(generateMoveDB()).concat(generateMoveDB()).concat(generateMoveDB());
+    return generateMoveDB();
   }, []);
 
   const [filteredMoves, setFilteredMoves] = useState<PoleMove[] | null>(null);
@@ -23,6 +23,7 @@ function App() {
           const newFilteredMoves = moveData.filter(move => move.name.toLowerCase().includes(searchedString.toLowerCase()));
           setFilteredMoves(newFilteredMoves);
         }
+
       }} />,
       children: [
         { index: true, element: <MovesPage moveData={filteredMoves ? filteredMoves : moveData} /> },
@@ -36,12 +37,7 @@ function App() {
               return Promise.reject("No valid move ID provided in URL!");
             }
 
-            const parsedMoveId = parseInt(moveId);
-            if (parsedMoveId === null || isNaN(parsedMoveId)) {
-              return Promise.reject("Could not parse supplied move ID to a numerical value!");
-            }
-
-            const pageMove = moveData.find(md => md.id === parsedMoveId);
+            const pageMove = moveData.find(md => md.id === moveId);
 
             if (!pageMove) {
               return Promise.reject("Could not find pole move with given ID in database");
