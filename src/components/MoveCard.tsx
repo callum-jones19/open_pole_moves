@@ -8,11 +8,14 @@ export interface MoveCardProps {
 const MoveCard = ({ move }: MoveCardProps) => {
   return (
     <>
-      <NavLink to={`/move/${move.id}`} className="w-60 h-80 shadow-md flex flex-col justify-between">
-        <img src={undefined} alt="move_name_img" className="bg-neutral-100 w-full h-3/4" loading="lazy" />
+      <NavLink
+        to={`/move/${move.id}`}
+        className="w-60 h-80 shadow-md flex flex-col justify-between hover:bg-neutral-700 hover:text-white hover:cursor-default hover:font-bold"
+      >
+        <img src={undefined} alt="move_name_img" className="bg-neutral-100 w-full h-3/4 font-normal text-black" loading="lazy" />
         <div className="p-2">
           <p className="text-lg">{move.name}</p>
-          <p>{move.difficulty}</p>
+          <p className="font-normal italic text-sm">{move.difficulty}</p>
         </div>
       </NavLink>
     </>
