@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, Menu } from "react-feather";
+import { NavLink } from "react-router";
 
 export interface HeaderProps {
   onSearchString: (searchTerm: string) => void;
@@ -9,11 +10,9 @@ const Header = ({ onSearchString }: HeaderProps) => {
   const [showSidebar, setShowSidebar] = useState<boolean>(false);
   
   const handleKeyDown = (e: KeyboardEvent) => {
-    console.log(e);
     if (e.key === "s") {
       const searchBar = document.getElementById("headerSearchBar");
       if (searchBar) {
-        console.log("Focusing search bar!");
         searchBar.focus();
       }
     }
@@ -30,10 +29,10 @@ const Header = ({ onSearchString }: HeaderProps) => {
   return (
     <>
       <div className="w-full h-14 fixed top-0 bg-neutral-800 text-white flex flex-row justify-between">
-        <div className="h-full basis-full flex-row sm:flex hidden">
-          <button className="px-3 border-b-4 border-neutral-400 bg-neutral-900 p-1">Moves</button>
-          <button className="px-3 border-neutral-400 bg-neutral-800 p-1 hover:bg-neutral-700">Combos</button>
-        </div>
+        <nav className="h-full basis-full flex-row sm:flex hidden">
+          <NavLink to="/" className="px-3 border-b-4 border-neutral-400 bg-neutral-900 p-1">Moves</NavLink>
+          <NavLink to="/combos" className="px-3 active:border-b-4 active:border-neutral-400 active:bg-neutral-900 p-1 hover:bg-neutral-700">Combos</NavLink>
+        </nav>
         <button
           type="button"
           className="px-4 hover:bg-neutral-700 sm:hidden"
@@ -51,8 +50,8 @@ const Header = ({ onSearchString }: HeaderProps) => {
         <button className="p-2 hover:bg-neutral-600 h-14" onClick={() => setShowSidebar(false)}>
           <ArrowLeft />
         </button>
-        <button className="bg-neutral-900 py-3 px-1 text-start">Moves</button>
-        <button className="bg-neutral-900 py-3 px-1 text-start">Combos</button>
+        <NavLink to="/" className="bg-neutral-900 py-3 px-1 text-start">Moves</NavLink>
+        <NavLink to="/combos" className="bg-neutral-900 py-3 px-1 text-start">Combos</NavLink>
       </div>
     </>
   )

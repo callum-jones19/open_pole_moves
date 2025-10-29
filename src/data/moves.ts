@@ -3,6 +3,7 @@ export type Difficulty = "Beginner" | "Intermediate" | "Advanced";
 export type BodyPart = "Shoulder" | "Hand" | "Elbow" | "Thigh" | "Stomach" | "Knee" | "Ankle" | "Armpit";
 
 export interface PoleMove {
+  id: number;
   name: string;
   alternateNames: string[];
   difficulty: Difficulty;
@@ -14,6 +15,7 @@ export interface PoleMove {
 export const generateMoveDB = (): PoleMove[] => {
   return [
     {
+      id: 1,
       name: "Climb",
       alternateNames: [],
       difficulty: "Beginner",
@@ -21,6 +23,7 @@ export const generateMoveDB = (): PoleMove[] => {
       basicImage: "",
     },
     {
+      id: 2,
       name: "Ballerina",
       alternateNames: [],
       difficulty: "Beginner",
@@ -28,6 +31,7 @@ export const generateMoveDB = (): PoleMove[] => {
       basicImage: "",
     },
     {
+      id: 3,
       name: "Vomitron",
       alternateNames: [],
       difficulty: "Beginner",
