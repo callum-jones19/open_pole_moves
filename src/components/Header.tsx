@@ -30,8 +30,8 @@ const Header = ({ onSearchString }: HeaderProps) => {
     <>
       <div className="w-full h-14 fixed top-0 bg-neutral-800 text-white flex flex-row justify-between">
         <nav className="h-full basis-full flex-row sm:flex hidden">
-          <NavLink to="/" className="px-3 border-b-4 border-neutral-400 bg-neutral-900 p-1">Moves</NavLink>
-          <NavLink to="/combos" className="px-3 active:border-b-4 active:border-neutral-400 active:bg-neutral-900 p-1 hover:bg-neutral-700">Combos</NavLink>
+          <NavLink to="/" className={({ isActive }) => `px-3 flex items-center hover:bg-neutral-600 hover:cursor-default ${isActive ? "bg-neutral-700 border-b-4 border-neutral-400 font-bold" : "bg-neutral-800"}`}>Moves</NavLink>
+          <NavLink to="/combos" className={({ isActive }) => `px-3 flex items-center hover:bg-neutral-600 hover:cursor-default ${isActive ? "bg-neutral-700 border-b-4 border-neutral-400 font-bold" : "bg-neutral-800"}`}>Combos</NavLink>
         </nav>
         <button
           type="button"
