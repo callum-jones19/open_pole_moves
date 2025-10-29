@@ -12,7 +12,14 @@ const MoveCard = ({ move }: MoveCardProps) => {
         to={`/move/${move.id}`}
         className="w-60 h-80 shadow-md flex flex-col justify-between hover:bg-neutral-700 hover:text-white hover:cursor-default hover:font-bold"
       >
-        <img src={undefined} alt="move_name_img" className="bg-neutral-100 w-full h-3/4 font-normal text-black" loading="lazy" />
+        {move.basicImage ?
+          <img
+            src={undefined}
+            alt="move_name_img"
+            className="bg-neutral-100 w-full h-3/4 font-normal text-black" loading="lazy"
+          /> :
+          <p className="bg-neutral-100 w-full h-3/4 text-neutral-500 font-normal italic flex items-center justify-center">No image provided</p>
+        }
         <div className="p-2">
           <p className="text-lg">{move.name}</p>
           <p className="font-normal italic text-sm">{move.difficulty}</p>
