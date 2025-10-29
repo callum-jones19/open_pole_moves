@@ -10,7 +10,7 @@ function App() {
       <div className="w-screen h-screen">
         <Header />
         <div className="w-full shrink flex flex-row flex-wrap gap-5 p-5">
-          {moveData.map(md => <MoveCard move={md} />)}  
+          {moveData.map((md, i) => <MoveCard move={md} key={i} />)}  
         </div>
       </div>
     </>

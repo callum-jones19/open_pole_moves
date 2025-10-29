@@ -8,7 +8,7 @@ const MoveCard = ({ move }: MoveCardProps) => {
   return (
     <>
       <div className="w-60 h-80 shadow-md flex flex-col justify-between">
-        <img src="" alt="move_name_img" className="bg-neutral-100 w-full h-3/4" loading="lazy" />
+        <img src={undefined} alt="move_name_img" className="bg-neutral-100 w-full h-3/4" loading="lazy" />
         <div className="p-2">
           <p className="text-lg">{move.name}</p>
           <p>{move.difficulty}</p>
