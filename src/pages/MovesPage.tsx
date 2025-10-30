@@ -12,7 +12,7 @@ export interface MovesPageParams {
 const MovesPage = ({ moveData }: MovesPageProps) => {
   return (
     <>
-      <div className="w-full flex flex-row flex-wrap gap-4 px-4 pt-2">
+      <div className="w-full h-full gap-4 px-4 pt-2 flex flex-wrap">
         {moveData.map((md, i) => <MoveCard move={md} key={i} />)}
       </div>
     </>
