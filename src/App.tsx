@@ -7,7 +7,7 @@ import MovesPage from "./pages/MovesPage";
 
 function App() {
   const moveData = useMemo(() => {
-    return generateMoveDB();
+    return generateMoveDB().concat(generateMoveDB());
   }, []);
 
   const [filteredMoves, setFilteredMoves] = useState<PoleMove[] | null>(null);
@@ -15,7 +15,6 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      // element: <MovesPage moveData={filteredMoves === null ? moveData : filteredMoves} />
       element: <RootPage onSearchString={searchedString => {
         if (searchedString === "") {
           setFilteredMoves(null);

@@ -11,7 +11,7 @@ const MoveCard = ({ move }: MoveCardProps) => {
     <>
       <NavLink
         to={`/move/${move.id}`}
-        className="w-60 h-80 shadow-md flex flex-col justify-between hover:bg-neutral-700 hover:text-white hover:cursor-default hover:font-bold group"
+        className="w-60 h-80 shadow-md flex flex-col justify-between bg-white hover:bg-neutral-700 hover:text-white hover:cursor-default hover:font-bold group"
       >
         {move.basicImage ?
           <img

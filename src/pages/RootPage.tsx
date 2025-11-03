@@ -8,7 +8,7 @@ export interface RootPageProps {
 const RootPage = ({ onSearchString }: RootPageProps) => {
   return (
     <>
-      <div className="w-screen h-screen">
+      <div className="w-full h-screen">
         <Header
           onSearchString={searchedString => onSearchString(searchedString)}
         />
