@@ -4,16 +4,24 @@ import type { PoleMove } from "../data/moves";
 const MovePage = () => {
   const pagePoleMove = useLoaderData<PoleMove>();
   
+  const alternateNames = pagePoleMove.alternateNames.length === 0 ?
+    (<i>none recorded</i>) :
+    pagePoleMove.alternateNames.map((altName, i) => (i + 1) !== pagePoleMove.alternateNames.length ? `${altName}, ` : altName);
+
+  const engagedBodyParts = pagePoleMove.engagedBodyParts.length === 0 ?
+    (<i>none recorded</i>) :
+    pagePoleMove.engagedBodyParts.map((bodyPart, i) => (i + 1) !== pagePoleMove.alternateNames.length ? `${bodyPart}, ` : bodyPart);
+
+
   return (
     <>
       <div className="w-full h-full flex flex-col">
-        <h1 className="text-4xl font-bold">{pagePoleMove.name}</h1>
-        <div className="w-full flex flex-row justify-between">
-          <img src={undefined} alt="Move image" className="h-80 w-80 bg-neutral-100" />
-          <div className="w-full flex flex-col gap-2">
-            <p><i>Alternate names</i>: {pagePoleMove.alternateNames}</p>
-            <p><i>Difficulty</i>: {pagePoleMove.difficulty}</p>
-          </div>
+        {pagePoleMove.basicImage && <img src="https://polepedia.com/wp-content/uploads/2020/05/Basic-Pole-Climb-PolePedia-Pole-Moves.gif" className="h-1/2 object-contain" />}
+        {!pagePoleMove.basicImage && <div className="bg-neutral-200 h-1/2" />}
+        <div className="p-2">
+          <h1 className="text-3xl font-bold w-full">{pagePoleMove.name}</h1>        
+          <p>Alternate names: {alternateNames}</p>
+          <p>Engaged body parts: {engagedBodyParts}</p>
         </div>
       </div>
     </>

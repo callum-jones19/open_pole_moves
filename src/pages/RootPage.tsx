@@ -12,7 +12,7 @@ const RootPage = ({ onSearchString }: RootPageProps) => {
         <Header
           onSearchString={searchedString => onSearchString(searchedString)}
         />
-        <div className="w-full h-full pt-16">
+        <div className="w-full h-full pt-14">
           <Outlet />
         </div>
       </div>

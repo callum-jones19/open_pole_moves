@@ -19,7 +19,7 @@ export const generateMoveDB = (): PoleMove[] => {
       name: "Climb",
       alternateNames: [],
       difficulty: "Beginner",
-      engagedBodyParts: [],
+      engagedBodyParts: ["Hand", "Thigh", "Elbow"],
       basicImage: "",
     },
     {
@@ -33,7 +33,7 @@ export const generateMoveDB = (): PoleMove[] => {
     {
       id: "vomitron",
       name: "Vomitron",
-      alternateNames: [],
+      alternateNames: ["test", "test2"],
       difficulty: "Beginner",
       engagedBodyParts: [],
       basicImage: "",
