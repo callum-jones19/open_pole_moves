@@ -12,42 +12,20 @@ export interface PoleMove {
   videoDemonstrationUrl?: string;
 }
 
-export const generateMoveDB = (): PoleMove[] => {
+export type PoleMoveDatabase = PoleMove[];
+
+export const generateMoveDB = (): PoleMoveDatabase => {
   return [
     {
-      id: "climb",
-      name: "Climb",
-      alternateNames: [],
-      difficulty: "Beginner",
-      engagedBodyParts: ["Hand", "Thigh", "Elbow"],
-      basicImage: "",
-    },
-    {
-      id: "ballerina",
-      name: "Ballerina",
+      id: "climb_standard",
+      name: "Climb (Standard)",
       alternateNames: [],
       difficulty: "Beginner",
       engagedBodyParts: [],
-      basicImage: "",
-    },
-    {
-      id: "vomitron",
-      name: "Vomitron",
-      alternateNames: ["test", "test2"],
-      difficulty: "Beginner",
-      engagedBodyParts: [],
-      basicImage: "",
     },
     {
       id: "back_hook",
       name: "Back Hook",
-      alternateNames: [],
-      difficulty: "Beginner",
-      engagedBodyParts: [],
-    },
-    {
-      id: "chair_spin",
-      name: "Chair Spin",
       alternateNames: [],
       difficulty: "Beginner",
       engagedBodyParts: [],
@@ -60,6 +38,13 @@ export const generateMoveDB = (): PoleMove[] => {
       engagedBodyParts: [],
     },
     {
+      id: "chair_spin",
+      name: "Chair Spin",
+      alternateNames: [],
+      difficulty: "Beginner",
+      engagedBodyParts: [],
+    },
+    {
       id: "sit",
       name: "Sit",
       alternateNames: [],
@@ -67,11 +52,54 @@ export const generateMoveDB = (): PoleMove[] => {
       engagedBodyParts: [],
     },
     {
-      id: "cradle_spin",
-      name: "Cradle Spin",
+      id: "scissor_sit",
+      name: "Scissor Sit",
+      difficulty: "Beginner",
       alternateNames: [],
+      engagedBodyParts: [],
+    },
+    {
+      id: "layout",
+      name: "Layout",
+      difficulty: "Beginner",
+      alternateNames: [],
+      engagedBodyParts: [],
+    },
+    {
+      id: "layback",
+      name: "Layback",
+      alternateNames: ["Cross-legged Hangback"],
+      difficulty: "Beginner",
+      engagedBodyParts: [],
+    },
+    {
+      id: "hello_boys",
+      name: "Hello Boys",
+      alternateNames: ["Hello World"],
+      difficulty: "Beginner",
+      engagedBodyParts: [],
+    },
+    {
+      id: "vomitron",
+      name: "Vomitron",
+      alternateNames: ["Swan Sit", "Tornado", "Vortex"],
+      difficulty: "Beginner",
+      engagedBodyParts: [],
+    },
+    {
+      id: "swan_ball",
+      name: "Swan Ball",
+      alternateNames: [],
+      difficulty: "Beginner",
+      engagedBodyParts: [],
+    },
+    {
+      id: "figure_skater",
+      name: "Figure Skater",
+      alternateNames: ["Hood Ornament"],
       difficulty: "Beginner",
       engagedBodyParts: [],
     }
   ];
 }
+

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowLeft, Menu } from "react-feather";
+import { ArrowLeft, Menu, X } from "react-feather";
 import { NavLink } from "react-router";
 
 export interface HeaderProps {
@@ -48,10 +48,10 @@ const Header = ({ onSearchString }: HeaderProps) => {
       </div>
       <div className={"z-20 w-26 h-full bg-neutral-800 text-white left-0 top-0 flex flex-col " + (showSidebar ? "sm:hidden fixed" : "hidden")}>
         <button className="p-2 hover:bg-neutral-600 h-14" onClick={() => setShowSidebar(false)}>
-          <ArrowLeft />
+          <X />
         </button>
-        <NavLink to="/" className="bg-neutral-900 py-3 px-1 text-start">Moves</NavLink>
-        <NavLink to="/combos" className="bg-neutral-900 py-3 px-1 text-start">Combos</NavLink>
+        <NavLink to="/" className={({ isActive }) => `py-3 px-3 flex items-center hover:bg-neutral-600 hover:cursor-default ${isActive ? "bg-neutral-700 font-bold `border-b-4 border-neutral-400" : "bg-neutral-800"}`}>Moves</NavLink>
+        <NavLink to="/combos" className={({ isActive }) => `py-3 px-3 flex items-center hover:bg-neutral-600 hover:cursor-default ${isActive ? "bg-neutral-700 font-bold `border-b-4 border-neutral-400" : "bg-neutral-800"}`}>Combos</NavLink>
       </div>
     </>
   )
