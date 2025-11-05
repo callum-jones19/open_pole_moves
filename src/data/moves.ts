@@ -99,6 +99,27 @@ export const generateMoveDB = (): PoleMoveDatabase => {
       alternateNames: ["Hood Ornament"],
       difficulty: "Beginner",
       engagedBodyParts: [],
+    },
+    {
+      id: "crucifix_inverted",
+      name: "Crucifix (Inverted)",
+      alternateNames: [],
+      difficulty: "Beginner",
+      engagedBodyParts: [],
+    },
+    {
+      id: "bat",
+      name: "Bat",
+      alternateNames: ["Invert"],
+      difficulty: "Beginner",
+      engagedBodyParts: [],
+    },
+    {
+      id: "superman",
+      name: "Superman",
+      alternateNames: [],
+      difficulty: "Beginner",
+      engagedBodyParts: [],
     }
   ];
 }
