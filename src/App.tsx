@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import MovePage from "./pages/MovePage";
 import RootPage from "./pages/RootPage";
 import MovesPage from "./pages/MovesPage";
+import CombosPage from "./pages/CombosPage";
 
 function App() {
   const moveData = useMemo(() => {
@@ -26,7 +27,7 @@ function App() {
       }} />,
       children: [
         { index: true, element: <MovesPage moveData={filteredMoves ? filteredMoves : moveData} /> },
-        { path: '/combos', element: <></> },
+        { path: '/combos', element: <CombosPage /> },
         {
           path: '/move/:moveId',
           loader: async (params): Promise<PoleMove> => {
