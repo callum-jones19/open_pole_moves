@@ -20,8 +20,8 @@ const MovePage = () => {
           <div className="bg-neutral-200 h-1/2 lg:h-full lg:w-1/2 relative flex flex-col justify-center items-center text-neutral-600">
             <p className="italic">No image found</p>
             <div className="absolute bottom-2 w-full h-10 flex flex-row justify-center text-black">
-              <button type="button" className="bg-neutral-800 text-white hover:bg-neutral-600 hover:text-white h-full p-1 px-3 rounded-l-md">Image</button>
-              <button type="button" className="bg-neutral-300 hover:bg-neutral-400 h-full p-1 px-3 rounded-r-md">Video</button>
+              <button type="button" className="bg-neutral-800 text-white hover:bg-neutral-600 hover:text-white h-full p-1 px-3 rounded-l-md shadow-md">Image</button>
+              <button type="button" className="bg-neutral-300 hover:bg-neutral-400 h-full p-1 px-3 rounded-r-md shadow-md">Video</button>
             </div>
           </div>
         }

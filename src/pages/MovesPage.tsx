@@ -15,7 +15,10 @@ const MovesPage = ({ moveData }: MovesPageProps) => {
       <div className="w-full gap-4 px-4 pt-2 grid grid-cols-[repeat(auto-fill,250px)] justify-center pb-6">
         {moveData.map((md, i) => {
           return (
-            <div className="h-full w-full flex justify-center">
+            <div
+              className="h-full w-full flex justify-center"
+              key={i}
+            >
               <MoveCard move={md} key={i} />
             </div>
           )})}

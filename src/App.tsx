@@ -7,7 +7,7 @@ import MovesPage from "./pages/MovesPage";
 
 function App() {
   const moveData = useMemo(() => {
-    return generateMoveDB().concat(generateMoveDB());
+    return generateMoveDB();
   }, []);
 
   const [filteredMoves, setFilteredMoves] = useState<PoleMove[] | null>(null);
